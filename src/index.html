@@ -18,5 +18,20 @@
   integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
   crossorigin="anonymous"></script>
   <script type="text/javascript" src="/assets/bootstrap/js/bootstrap.min.js"></script>
+
+  <script type="text/javascript">
+  $("body").keydown(function(e) {
+  if(e.keyCode == 37) { // left
+    $("#showroom").animate({
+      left: "-=980"
+    });
+  }
+  else if(e.keyCode == 39) { // right
+    $("#showroom").animate({
+      left: "+=980"
+    });
+  }
+  });
+  </script>
 </body>
 </html>
