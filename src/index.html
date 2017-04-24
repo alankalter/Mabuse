@@ -10,7 +10,7 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
-  <script type="text/javascript" src="~/share/moment.js"></script>
+  <script type="text/javascript" src="/assets/moment.js"></script>
   <app-root>Loading...</app-root>
 
 <script
@@ -19,19 +19,5 @@
   crossorigin="anonymous"></script>
   <script type="text/javascript" src="/assets/bootstrap/js/bootstrap.min.js"></script>
 
-  <script type="text/javascript">
-  $("body").keydown(function(e) {
-  if(e.keyCode == 37) { // left
-    $("#showroom").animate({
-      left: "-=980"
-    });
-  }
-  else if(e.keyCode == 39) { // right
-    $("#showroom").animate({
-      left: "+=980"
-    });
-  }
-  });
-  </script>
 </body>
 </html>
