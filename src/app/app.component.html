@@ -1,3 +1,77 @@
-<h1>
-  {{title}}
-</h1>
+
+<div class="all" (window:keydown)="keyPressHandler($event)">
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header text-center">
+        <a class="navbar-brand" href="#" data-toggle="modal" data-target="#infoModal">
+          <img alt="Brand" src="menuImg.jpg">
+        </a>
+      <div class="date-head">
+          {{currentDate}}
+      </div>
+      </div>
+    </div>
+  </nav>
+
+    
+  <div *ngFor="let theater of data | theaterDateFilter: currentDate">
+      
+    <div class="container">
+        <h3>{{theater.name}}</h3>
+        <div class="col-lg-12 text" *ngFor="let film of (theater.films |  dateFilter: currentDate)">
+          <a href="{{film.url}}" target="_blank">{{film.title}}</a>
+          <br />
+          <div>
+          <p>&nbsp;&nbsp;{{film.time}}</p>
+          </div>      
+        </div>    
+      </div>
+
+          <p *ngIf="theater == -1">No tengo nada.</p>      
+      
+  </div>
+
+
+  <div class="bottom-nav">
+    <div class="back-button pull-left" >
+      <div (click)="incrementDate(-1)"><span class="glyphicon glyphicon-chevron-left"></span></div>
+    </div>
+
+    <div class="forward-button pull-right" >
+      <div (click)="incrementDate(1)" ><span class="glyphicon glyphicon-chevron-right"></span></div>
+    </div>
+  </div>
+</div>
+
+
+<!--<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>-->
+
+<!-- Modal -->
+<div id="infoModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Mabuse (mah &bull; BOO &bull; suh)</h4>
+      </div>
+      <div class="modal-body">
+        <p>Mabuse is an aggregator of movie screenings in the Los Angeles area which are not listed on larger movie sites.</p>
+        <p>Left and right arrow keys for navigation.</p>
+        
+        <p>For updates, info, or to make suggestions about theaters/screenings to add:</p>
+        <a href="https://www.facebook.com/mabuselosangeles/">Go here.</a>
+        <p>Or email <a href="mailto:mabuselosangeles@gmail.com">here.</a>
+        <p>&copy; Mabuse 2017</p>
+        
+      </div>
+      <!--<div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>-->
+    </div>
+
+  </div>
+</div>
+
+ 

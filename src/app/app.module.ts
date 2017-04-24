@@ -4,17 +4,16 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-
+import { AngularFireModule } from 'angularfire2';
+import { firebaseConfig } from "environments/firebase.config";
+import { DateFilter } from '../share/pipes/dateFilter.pipe';
+import {TheaterDateFilter } from '../share/pipes/dateFilter.pipe';
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
   imports: [
     BrowserModule,
-    FormsModule,
-    HttpModule
+    AngularFireModule.initializeApp(firebaseConfig),
+    
   ],
-  providers: [],
-  bootstrap: [AppComponent]
-})
-export class AppModule { }
+  declarations: [ AppComponent, DateFilter, TheaterDateFilter ],
+  bootstrap: [ AppComponent ]
+})export class AppModule {}
