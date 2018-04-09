@@ -4,7 +4,7 @@
     <div class="container-fluid">
       <div class="navbar-header text-center">
         <a class="navbar-brand" href="#" data-toggle="modal" data-target="#infoModal">
-          <img alt="Brand" src="menuImg.jpg">
+          <img alt="Brand" src="/assets/menuImg.jpg">
         </a>
       <div class="date-head">
           {{currentDate}}
@@ -22,7 +22,8 @@
           <a href="{{film.url}}" target="_blank">{{film.title}}</a>
           <br />
           <div>
-          <p>&nbsp;&nbsp;{{film.time}}</p>
+          <p>&nbsp;&nbsp;{{film.time}} <span *ngIf="film.location">&nbsp;&nbsp; - {{film.location}}</span></p>
+          
           </div>      
         </div>    
       </div>
