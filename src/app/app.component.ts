@@ -25,7 +25,7 @@ export class AppComponent {
           this.data.push(newObj);
         });
         //set date on data to trigger pipe filter
-         this.currentDate = moment().format("ddd MM/DD/2017");
+         this.currentDate = moment().format("ddd MM/DD/YYYY");
         
       })
   }
